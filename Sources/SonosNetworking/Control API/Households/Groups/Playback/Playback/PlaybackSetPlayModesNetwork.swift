@@ -16,7 +16,7 @@ public class PlaybackSetPlayModesNetwork: Network {
     
     private var accessToken: String
     private var groupId: String
-    private var playModes: [String]
+    private var playModes: [String:Any]
     private var successHandler: (Data?) -> Void
     private var failureHandler: (Error?) -> Void
     
@@ -32,7 +32,7 @@ public class PlaybackSetPlayModesNetwork: Network {
     ///   - failure: The callback when this request is unsuccessful. Error provided as `Error?`.
     public init(accessToken: String,
                 groupId: String,
-                playModes: [String],
+                playModes: [String:Any],
                 success: @escaping (Data?) -> Void,
                 failure: @escaping (Error?) -> Void) {
         self.accessToken = accessToken
